@@ -34,8 +34,8 @@ export default function QuestionScreen({
 
   return (
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
-      <div className="fixed top-8 left-8 z-50">
-        <div className="text-7xl font-bold">
+      <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
+        <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
           <span className="text-egen font-extrabold">E</span>
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
@@ -67,7 +67,7 @@ export default function QuestionScreen({
         <Card className="shadow-xl mb-6 md:mb-8">
           <CardContent className="p-3 sm:p-4 md:p-6 lg:p-8">
             <div className="mb-4 md:mb-6">
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-slate-800 mb-3 md:mb-4 leading-snug break-words safe-text korean-text mobile-text-xs">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3 md:mb-4 leading-relaxed break-words">
                 {currentQuestionIndex + 1}. {question.text}
               </h3>
             </div>
@@ -79,24 +79,23 @@ export default function QuestionScreen({
                   key={index}
                   onClick={() => onAnswerSelect(option)}
                   variant="outline"
-                  className={`w-full text-left p-2 sm:p-2.5 md:p-3 lg:p-4 rounded-xl border-2 h-auto justify-start transition-all duration-200 overflow-hidden mobile-padding-xs focus-visible ${
+                  className={`w-full text-left p-3 sm:p-4 rounded-xl border-2 h-auto justify-start transition-all duration-200 ${
                     selectedAnswer === option 
                       ? 'border-purple-400 bg-purple-50 dark:border-purple-500 dark:bg-purple-950/20' 
                       : 'border-slate-200 hover:border-purple-300 hover:bg-purple-50/30 dark:border-slate-600 dark:hover:border-purple-400 dark:hover:bg-purple-950/10'
                   }`}
-                  style={{ maxWidth: '100%', boxSizing: 'border-box', minHeight: '0' }}
                   aria-label={`선택지 ${index + 1}: ${option.text}`}
                   role="radio"
                   aria-checked={selectedAnswer === option}
                 >
-                  <div className="flex items-start w-full min-w-0 max-w-full">
-                    <div className={`w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full border-2 mr-2 sm:mr-2.5 md:mr-3 lg:mr-4 mt-0.5 sm:mt-1 flex-shrink-0 ${
+                  <div className="flex items-start w-full">
+                    <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 mr-3 mt-0.5 flex-shrink-0 ${
                       selectedAnswer === option 
                         ? 'bg-purple-500 border-purple-500' 
                         : 'border-slate-300 dark:border-slate-500'
                     }`} />
-                    <div className="min-w-0 flex-1 max-w-full overflow-hidden">
-                      <span className="text-xs sm:text-sm md:text-base text-slate-700 leading-snug sm:leading-relaxed text-left break-words safe-text korean-text block whitespace-normal mobile-text-xs">
+                    <div className="flex-1">
+                      <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed block break-words">
                         {option.text}
                       </span>
                     </div>

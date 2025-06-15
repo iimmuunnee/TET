@@ -22,7 +22,7 @@ function Router() {
 
 function Footer() {
   return (
-    <footer className="mt-auto py-4 px-4 text-center text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+    <footer className="py-2 px-4 text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
       이 테스트는 재미를 위한 것이며, 과학적 근거가 없습니다.
     </footer>
   );
