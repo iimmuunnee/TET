@@ -5,61 +5,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Completely remove all browser default button styling */
-* {
-  -webkit-tap-highlight-color: transparent !important;
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-button,
-button:focus,
-button:focus-visible,
+/* Fix blue flash on button hover/focus */
+button, 
+button:focus, 
+button:focus-visible, 
 button:active,
-button:hover,
-button:visited,
-button:link,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+button:hover {
   outline: none !important;
-  border: none !important;
   box-shadow: none !important;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
   -webkit-tap-highlight-color: transparent !important;
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -khtml-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  background: none !important;
 }
 
-button::-moz-focus-inner,
-input[type="button"]::-moz-focus-inner,
-input[type="submit"]::-moz-focus-inner,
-input[type="reset"]::-moz-focus-inner {
+/* Prevent any system focus colors */
+button:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove webkit/chrome specific button styling */
+button::-moz-focus-inner {
   border: 0 !important;
   padding: 0 !important;
-  margin: 0 !important;
-  outline: none !important;
-}
-
-/* Remove any possible webkit/chrome specific styling */
-button::-webkit-search-decoration,
-button::-webkit-search-cancel-button,
-button::-webkit-search-results-button,
-button::-webkit-search-results-decoration {
-  display: none !important;
 }
 
 /* 접근성 개선 - 포커스 표시 */
