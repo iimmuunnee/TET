@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Remove default button focus styles to prevent blue flash */
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* 접근성 개선 - 포커스 표시 */
 .focus-visible {
   @apply outline-none ring-2 ring-purple-400 ring-offset-1 ring-offset-background;
