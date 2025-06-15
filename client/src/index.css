@@ -5,19 +5,27 @@
 @tailwind utilities;
 
 /* Fix blue flash on button hover/focus */
-button:focus {
+button, 
+button:focus, 
+button:focus-visible, 
+button:active,
+button:hover {
   outline: none !important;
   box-shadow: none !important;
-}
-
-button:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Remove webkit tap highlight */
-button {
   -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Prevent any system focus colors */
+button:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: inherit !important;
+}
+
+/* Remove webkit/chrome specific button styling */
+button::-moz-focus-inner {
+  border: 0 !important;
+  padding: 0 !important;
 }
 
 /* 접근성 개선 - 포커스 표시 */
