@@ -76,13 +76,13 @@ textarea:focus-visible {
 }
 
 :root {
-  --background: hsl(0, 0%, 100%);
+  --background: hsl(210, 40%, 98%);
   --foreground: hsl(20, 14.3%, 4.1%);
   --muted: hsl(60, 4.8%, 95.9%);
   --muted-foreground: hsl(25, 5.3%, 44.7%);
-  --popover: hsl(0, 0%, 100%);
+  --popover: hsl(210, 40%, 98%);
   --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
+  --card: hsl(210, 40%, 98%);
   --card-foreground: hsl(20, 14.3%, 4.1%);
   --border: hsl(20, 5.9%, 90%);
   --input: hsl(20, 5.9%, 90%);
@@ -112,7 +112,7 @@ textarea:focus-visible {
 
 /* 페이지 전환 시 배경색 일관성 보장 */
 html, body {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(210, 40%, 98%);
   transition: background-color 0ms;
 }
 
@@ -159,7 +159,7 @@ html.dark, html.dark body {
   }
 
   :not(.dark) body {
-    background: linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(214, 100%, 97%) 100%);
+    background: linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(210, 40%, 96%) 100%);
   }
 }
 
