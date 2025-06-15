@@ -38,7 +38,7 @@ export default function NameInput({ onNameSubmit }: NameInputProps) {
   };
 
   return (
-    <div className="flex items-center justify-center p-4 min-h-screen bg-white dark:bg-slate-900 pt-24">
+    <div className="min-h-screen bg-white dark:bg-slate-900 flex flex-col">
       <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
         <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
@@ -46,7 +46,8 @@ export default function NameInput({ onNameSubmit }: NameInputProps) {
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
         </div>
       </div>
-      <div className="max-w-lg w-full">
+      <div className="flex-1 flex items-center justify-center p-4 pt-16 sm:pt-20 md:pt-24">
+        <div className="max-w-lg w-full">
         <div className="text-center mb-4 md:mb-6">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4">
             <span className="text-teto font-extrabold">테토</span>
@@ -97,15 +98,16 @@ export default function NameInput({ onNameSubmit }: NameInputProps) {
             </div>
           </CardContent>
         </Card>
-
-        <div className="text-center">
-          <Link href="/">
-            <Button variant="ghost" className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 font-medium transition-colors">
-              <ArrowLeft className="mr-2" size={16} />
-              홈으로 돌아가기
-            </Button>
-          </Link>
         </div>
+      </div>
+      
+      <div className="p-4 text-center">
+        <Link href="/">
+          <Button variant="ghost" className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 font-medium transition-colors">
+            <ArrowLeft className="mr-2" size={16} />
+            홈으로 돌아가기
+          </Button>
+        </Link>
       </div>
     </div>
   );

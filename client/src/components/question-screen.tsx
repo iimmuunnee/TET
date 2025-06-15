@@ -33,7 +33,7 @@ export default function QuestionScreen({
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
   return (
-    <div className="flex items-center justify-center p-2 sm:p-4 min-h-screen bg-white dark:bg-slate-900 pt-24">
+    <div className="min-h-screen bg-white dark:bg-slate-900 flex flex-col">
       <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
         <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
@@ -41,7 +41,8 @@ export default function QuestionScreen({
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
         </div>
       </div>
-      <div className="max-w-lg w-full max-w-full">
+      <div className="flex-1 flex items-center justify-center p-2 sm:p-4 pt-16 sm:pt-20 md:pt-24">
+        <div className="max-w-lg w-full max-w-full">
         {/* Title */}
         <div className="text-center mb-4 md:mb-6">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
@@ -105,26 +106,27 @@ export default function QuestionScreen({
             </div>
           </CardContent>
         </Card>
-
-        {/* Navigation */}
-        <div className="flex justify-between">
-          <Button 
-            onClick={onPreviousQuestion}
-            variant="ghost"
-            className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
-            disabled={!canGoBack}
-          >
-            <ArrowLeft className="mr-2" size={16} />
-            이전 문항
-          </Button>
-          <Button 
-            onClick={onBackToGender}
-            variant="ghost"
-            className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
-          >
-            처음으로 <Home className="ml-2" size={16} />
-          </Button>
         </div>
+      </div>
+
+      {/* Navigation */}
+      <div className="p-2 sm:p-4 flex justify-between">
+        <Button 
+          onClick={onPreviousQuestion}
+          variant="ghost"
+          className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
+          disabled={!canGoBack}
+        >
+          <ArrowLeft className="mr-2" size={16} />
+          이전 문항
+        </Button>
+        <Button 
+          onClick={onBackToGender}
+          variant="ghost"
+          className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
+        >
+          처음으로 <Home className="ml-2" size={16} />
+        </Button>
       </div>
     </div>
   );
