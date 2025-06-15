@@ -54,7 +54,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
             variant="outline"
             className={`w-full text-left p-4 sm:p-6 md:p-8 rounded-2xl border-2 h-auto justify-start transition-all duration-200 ${
               selectedGender === 'male'
-                ? 'border-orange-400 bg-orange-50 dark:border-orange-500 dark:bg-orange-950/20' 
+                ? 'border-orange-500 bg-orange-100 dark:border-orange-400 dark:bg-orange-950/30' 
                 : 'bg-white dark:bg-slate-800 border-slate-200 md:hover:border-orange-300 md:hover:bg-orange-50 dark:border-slate-600 dark:md:hover:border-orange-400 dark:md:hover:bg-orange-950/10 active:bg-orange-50 dark:active:bg-orange-950/10'
             }`}
           >
@@ -74,7 +74,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
             variant="outline"
             className={`w-full text-left p-4 sm:p-6 md:p-8 rounded-2xl border-2 h-auto justify-start transition-all duration-200 ${
               selectedGender === 'female'
-                ? 'border-purple-400 bg-purple-50 dark:border-purple-500 dark:bg-purple-950/20' 
+                ? 'border-purple-500 bg-purple-100 dark:border-purple-400 dark:bg-purple-950/30' 
                 : 'bg-white dark:bg-slate-800 border-slate-200 md:hover:border-purple-300 md:hover:bg-purple-50 dark:border-slate-600 dark:md:hover:border-purple-400 dark:md:hover:bg-purple-950/10 active:bg-purple-50 dark:active:bg-purple-950/10'
             }`}
           >
