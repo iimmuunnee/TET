@@ -103,11 +103,15 @@ export default function QuestionScreen({
                   aria-checked={selectedAnswer === option}
                 >
                   <div className="flex items-start w-full">
-                    <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 mr-3 mt-0.5 flex-shrink-0 ${
+                    <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center ${
                       selectedAnswer === option || tempSelectedAnswer === option
-                        ? 'bg-purple-500 border-purple-500' 
+                        ? 'border-purple-500' 
                         : 'border-slate-300 dark:border-slate-500'
-                    }`} />
+                    }`}>
+                      {(selectedAnswer === option || tempSelectedAnswer === option) && (
+                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-purple-500" />
+                      )}
+                    </div>
                     <div className="flex-1">
                       <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed block break-words">
                         {option.text}
