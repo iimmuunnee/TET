@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 접근성 개선 - 포커스 표시 */
+.focus-visible {
+  @apply outline-none ring-2 ring-purple-400 ring-offset-1 ring-offset-background;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible {
+  @apply outline-none ring-2 ring-purple-400 ring-offset-1 ring-offset-background;
+  box-shadow: 0 0 0 1px var(--background), 0 0 0 3px rgb(168 85 247 / 0.4);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  @apply outline-none ring-2 ring-purple-400 ring-offset-1 ring-offset-background;
+  box-shadow: 0 0 0 1px var(--background), 0 0 0 3px rgb(168 85 247 / 0.4);
+}
+
+/* 카드나 버튼 등의 상호작용 요소 포커스 */
+.card:focus-visible,
+.interactive-element:focus-visible {
+  @apply outline-none ring-2 ring-purple-400 ring-offset-1 ring-offset-background;
+  box-shadow: 0 0 0 1px var(--background), 0 0 0 3px rgb(168 85 247 / 0.4);
+}
+
+/* 키보드 네비게이션 지원 */
+.keyboard-only:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* 태블릿 반응형 개선 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-text-adjust {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .tablet-spacing {
+    padding: 1rem;
+  }
+  
+  .tablet-card-spacing {
+    padding: 1.25rem;
+  }
+}
+
+/* 작은 화면에서 텍스트 최적화 */
+@media (max-width: 480px) {
+  .mobile-text-xs {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .mobile-padding-xs {
+    padding: 0.75rem !important;
+  }
+}
+
+/* 한글 텍스트 최적화 */
+.korean-text {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 안전한 텍스트 표시 */
+.safe-text {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  hyphens: auto;
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom Teto-Egen Colors */
+  --teto: hsl(25, 95%, 53%);
+  --teto-foreground: hsl(0, 0%, 100%);
+  --egen: hsl(262, 83%, 58%);
+  --egen-foreground: hsl(0, 0%, 100%);
+  --slate-50: hsl(210, 40%, 98%);
+  --slate-100: hsl(210, 40%, 96%);
+  --slate-600: hsl(215, 16%, 47%);
+  --slate-700: hsl(215, 19%, 35%);
+  --slate-800: hsl(215, 25%, 27%);
+  --blue-50: hsl(214, 100%, 97%);
+}
+
+/* 페이지 전환 시 배경색 일관성 보장 */
+html, body {
+  background-color: hsl(0, 0%, 100%);
+  transition: background-color 0ms;
+}
+
+html.dark, html.dark body {
+  background-color: hsl(240, 10%, 3.9%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground transition-colors duration-300;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, var(--background) 0%, var(--muted) 100%);
+  }
+
+  .dark body {
+    background: linear-gradient(135deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 3.7%, 15.9%) 100%);
+  }
+
+  :not(.dark) body {
+    background: linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(214, 100%, 97%) 100%);
+  }
+}
+
+@layer utilities {
+  .text-teto {
+    color: var(--teto);
+  }
+  
+  .text-egen {
+    color: var(--egen);
+  }
+  
+  .bg-teto {
+    background-color: var(--teto);
+  }
+  
+  .bg-egen {
+    background-color: var(--egen);
+  }
+  
+  .border-teto {
+    border-color: var(--teto);
+  }
+  
+  .border-egen {
+    border-color: var(--egen);
+  }
+  
+  .from-teto\/20 {
+    --tw-gradient-from: hsl(25 95% 53% / 0.2);
+  }
+  
+  .to-teto\/10 {
+    --tw-gradient-to: hsl(25 95% 53% / 0.1);
+  }
+  
+  .from-egen\/20 {
+    --tw-gradient-from: hsl(262 83% 58% / 0.2);
+  }
+  
+  .to-egen\/10 {
+    --tw-gradient-to: hsl(262 83% 58% / 0.1);
+  }
+  
+  .border-teto\/20 {
+    border-color: hsl(25 95% 53% / 0.2);
+  }
+  
+  .border-egen\/20 {
+    border-color: hsl(262 83% 58% / 0.2);
+  }
+  
+  .border-teto\/30 {
+    border-color: hsl(25 95% 53% / 0.3);
+  }
+  
+  .border-egen\/30 {
+    border-color: hsl(262 83% 58% / 0.3);
+  }
+  
+  .from-teto\/10 {
+    --tw-gradient-from: hsl(25 95% 53% / 0.1);
+  }
+  
+  .to-teto\/5 {
+    --tw-gradient-to: hsl(25 95% 53% / 0.05);
+  }
+  
+  .from-egen\/10 {
+    --tw-gradient-from: hsl(262 83% 58% / 0.1);
+  }
+  
+  .to-egen\/5 {
+    --tw-gradient-to: hsl(262 83% 58% / 0.05);
+  }
+  
+  /* Custom utilities for mobile text overflow prevention */
+  .word-break-keep-all {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .safe-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Galaxy S8+ and similar older device optimizations */
+  @media screen and (max-width: 380px) {
+    .mobile-text-xs {
+      font-size: 0.7rem;
+      line-height: 1.2;
+    }
+    
+    .mobile-padding-xs {
+      padding: 0.5rem;
+    }
+    
+    .mobile-margin-xs {
+      margin: 0.25rem;
+    }
+  }
+  
+  /* Additional text wrapping for Korean text */
+  .korean-text {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-break: strict;
+    white-space: normal;
+  }
+
+  /* Dark mode color adjustments */
+  .dark .text-teto {
+    color: hsl(25, 95%, 65%);
+  }
+  
+  .dark .text-egen {
+    color: hsl(262, 83%, 75%);
+  }
+  
+  .dark .border-teto\/20 {
+    border-color: hsl(25 95% 53% / 0.3);
+  }
+  
+  .dark .border-egen\/20 {
+    border-color: hsl(262 83% 58% / 0.3);
+  }
+  
+  .dark .border-teto\/30 {
+    border-color: hsl(25 95% 53% / 0.4);
+  }
+  
+  .dark .border-egen\/30 {
+    border-color: hsl(262 83% 58% / 0.4);
+  }
+
+  /* 다크모드에서 일반 텍스트 색상 개선 */
+  .dark .text-slate-600 {
+    color: hsl(215, 20%, 75%);
+  }
+  
+  .dark .text-slate-700 {
+    color: hsl(215, 16%, 80%);
+  }
+  
+  .dark .text-slate-800 {
+    color: hsl(215, 13%, 90%);
+  }
+  
+  .dark .text-slate-400 {
+    color: hsl(215, 20%, 70%);
+  }
+  
+  .dark .text-slate-300 {
+    color: hsl(215, 25%, 80%);
+  }
+  
+  .dark .text-slate-200 {
+    color: hsl(215, 28%, 90%);
+  }
+
+  /* 자동 색상 대비 조정 */
+  .auto-contrast-text {
+    color: color-contrast(var(--background) vs white, black);
+  }
+
+  .auto-contrast-on-teto {
+    color: color-contrast(var(--teto) vs white, black);
+  }
+
+  .auto-contrast-on-egen {
+    color: color-contrast(var(--egen) vs white, black);
+  }
+
+  /* 밝은 배경에서 텍스트 */
+  .light-bg-text {
+    color: hsl(215, 25%, 20%);
+  }
+
+  .dark .light-bg-text {
+    color: hsl(215, 25%, 95%);
+  }
+
+  /* 어두운 배경에서 텍스트 */
+  .dark-bg-text {
+    color: hsl(0, 0%, 95%);
+  }
+
+  .dark .dark-bg-text {
+    color: hsl(0, 0%, 10%);
+  }
+
+  /* 그라데이션 배경에서 텍스트 */
+  .gradient-text {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .gradient-text {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  /* 버튼 내 텍스트 색상 보장 */
+  .dark button {
+    color: inherit;
+  }
+  
+  .bg-gradient-to-r {
+    color: white;
+  }
+  
+  .dark .bg-gradient-to-r {
+    color: white;
+  }
+
+  /* 카드 내 텍스트 색상 최적화 */
+  .card-text {
+    color: var(--foreground);
+  }
+
+  .card-text-muted {
+    color: var(--muted-foreground);
+  }
+
+  /* 테토/에겐 색상 배경에서 텍스트 */
+  .teto-bg-text {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .egen-bg-text {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 진행률 바 그라데이션 스타일 */
+  .progress-gradient {
+    background: linear-gradient(90deg, hsl(224, 87%, 56%) 0%, hsl(262, 83%, 58%) 100%);
+  }
+  
+  .dark .progress-gradient {
+    background: linear-gradient(90deg, hsl(224, 87%, 60%) 0%, hsl(262, 83%, 65%) 100%);
+  }
+}
