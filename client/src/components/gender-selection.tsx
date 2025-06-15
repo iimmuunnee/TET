@@ -39,7 +39,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => onGenderSelect('male')}
             variant="outline"
-            className="group bg-white dark:bg-slate-800 hover:bg-gradient-to-r hover:from-teto/10 hover:to-teto/5 dark:hover:from-teto/20 dark:hover:to-teto/10 border-2 border-gray-200 dark:border-slate-600 hover:border-teto/30 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 transform hover:scale-105"
+            className="group bg-white dark:bg-slate-800 hover:bg-gradient-to-r hover:from-orange-100 hover:to-orange-50 dark:hover:from-orange-950/30 dark:hover:to-orange-950/15 border-2 border-gray-200 dark:border-slate-600 hover:border-orange-300 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 transform hover:scale-105"
           >
             <div className="flex items-center justify-center w-full min-w-0">
               <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-teto/20 to-teto/10 rounded-full flex items-center justify-center mr-3 sm:mr-4 md:mr-6 flex-shrink-0 text-xl sm:text-2xl md:text-3xl">
@@ -55,7 +55,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => onGenderSelect('female')}
             variant="outline"
-            className="group bg-white dark:bg-slate-800 hover:bg-gradient-to-r hover:from-egen/10 hover:to-egen/5 dark:hover:from-egen/20 dark:hover:to-egen/10 border-2 border-gray-200 dark:border-slate-600 hover:border-egen/30 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 transform hover:scale-105"
+            className="group bg-white dark:bg-slate-800 hover:bg-gradient-to-r hover:from-purple-100 hover:to-purple-50 dark:hover:from-purple-950/30 dark:hover:to-purple-950/15 border-2 border-gray-200 dark:border-slate-600 hover:border-purple-300 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 transform hover:scale-105"
           >
             <div className="flex items-center justify-center w-full min-w-0">
               <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-egen/20 to-egen/10 rounded-full flex items-center justify-center mr-3 sm:mr-4 md:mr-6 flex-shrink-0 text-xl sm:text-2xl md:text-3xl">
