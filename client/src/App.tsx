@@ -33,13 +33,9 @@ function App() {
     <ThemeProvider defaultTheme="system" storageKey="teto-egen-theme">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <div className="min-h-screen flex flex-col">
-            <Toaster />
-            <main className="flex-1">
-              <Router />
-            </main>
-            <Footer />
-          </div>
+          <Toaster />
+          <Router />
+          <Footer />
         </TooltipProvider>
       </QueryClientProvider>
     </ThemeProvider>
