@@ -5,62 +5,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Completely remove all browser default button styling and focus effects */
-button, 
-button:focus, 
-button:focus-visible, 
-button:active,
-button:hover,
-button:visited,
-button:link,
-[role="button"],
-[role="button"]:focus,
-[role="button"]:focus-visible,
-[role="button"]:active,
-[role="button"]:hover {
+/* Remove only the blue flash that appears when mouse leaves button */
+button:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove webkit tap highlight specifically */
+button {
   -webkit-tap-highlight-color: transparent !important;
-  -webkit-focus-ring-color: transparent !important;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
-  border: none !important;
-}
-
-/* Prevent any system focus colors */
-button:focus:not(:focus-visible),
-[role="button"]:focus:not(:focus-visible) {
-  outline: none !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-}
-
-/* Remove all webkit/firefox specific button styling */
-button::-moz-focus-inner,
-[role="button"]::-moz-focus-inner {
-  border: 0 !important;
-  padding: 0 !important;
-  outline: none !important;
-}
-
-/* Remove webkit search decorations */
-button::-webkit-search-decoration,
-button::-webkit-search-cancel-button,
-button::-webkit-search-results-button,
-button::-webkit-search-results-decoration {
-  display: none !important;
-}
-
-/* Prevent any color changes on state changes */
-button:focus,
-button:active,
-button:hover,
-[role="button"]:focus,
-[role="button"]:active,
-[role="button"]:hover {
-  background-color: inherit !important;
-  color: inherit !important;
 }
 
 /* 접근성 개선 - 포커스 표시 */
