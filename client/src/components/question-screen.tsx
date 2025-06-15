@@ -20,6 +20,8 @@ interface QuestionScreenProps {
   canGoBack: boolean;
 }
 
+import { useState } from "react";
+
 export default function QuestionScreen({
   currentQuestionIndex,
   totalQuestions,
@@ -31,6 +33,17 @@ export default function QuestionScreen({
   canGoBack
 }: QuestionScreenProps) {
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+  const [tempSelectedAnswer, setTempSelectedAnswer] = useState<Answer | null>(null);
+
+  const handleAnswerSelect = (answer: Answer) => {
+    setTempSelectedAnswer(answer);
+    
+    // 모바일에서 시각적 피드백을 위한 딜레이
+    setTimeout(() => {
+      setTempSelectedAnswer(null);
+      onAnswerSelect(answer);
+    }, 400);
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 flex flex-col">
@@ -78,10 +91,10 @@ export default function QuestionScreen({
               {question.options.map((option, index) => (
                 <Button
                   key={index}
-                  onClick={() => onAnswerSelect(option)}
+                  onClick={() => handleAnswerSelect(option)}
                   variant="outline"
                   className={`w-full text-left p-3 sm:p-4 rounded-xl border-2 h-auto justify-start transition-all duration-200 ${
-                    selectedAnswer === option 
+                    selectedAnswer === option || tempSelectedAnswer === option
                       ? 'border-purple-400 bg-purple-50 dark:border-purple-500 dark:bg-purple-950/20' 
                       : 'bg-white dark:bg-slate-800 border-slate-200 md:hover:border-sky-300 md:hover:bg-sky-50 dark:border-slate-600 dark:md:hover:border-sky-400 dark:md:hover:bg-sky-950/10 active:bg-sky-50 dark:active:bg-sky-950/10'
                   }`}
@@ -91,7 +104,7 @@ export default function QuestionScreen({
                 >
                   <div className="flex items-start w-full">
                     <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 mr-3 mt-0.5 flex-shrink-0 ${
-                      selectedAnswer === option 
+                      selectedAnswer === option || tempSelectedAnswer === option
                         ? 'bg-purple-500 border-purple-500' 
                         : 'border-slate-300 dark:border-slate-500'
                     }`} />

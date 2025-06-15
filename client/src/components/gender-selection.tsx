@@ -9,7 +9,20 @@ interface GenderSelectionProps {
   onBackToName?: () => void;
 }
 
+import { useState } from "react";
+
 export default function GenderSelection({ onGenderSelect, onBackToName }: GenderSelectionProps) {
+  const [selectedGender, setSelectedGender] = useState<Gender | null>(null);
+
+  const handleGenderSelect = (gender: Gender) => {
+    setSelectedGender(gender);
+    
+    // 모바일에서 시각적 피드백을 위한 딜레이
+    setTimeout(() => {
+      onGenderSelect(gender);
+    }, 300);
+  };
+
   return (
     <div className="min-h-screen bg-sky-100 dark:bg-slate-900 flex flex-col">
       <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
@@ -37,9 +50,13 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
 
         <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 md:mb-8 px-2">
           <Button
-            onClick={() => onGenderSelect('male')}
+            onClick={() => handleGenderSelect('male')}
             variant="outline"
-            className="group bg-white dark:bg-slate-800 md:hover:bg-gradient-to-r md:hover:from-orange-100 md:hover:to-orange-50 dark:md:hover:from-orange-950/30 dark:md:hover:to-orange-950/15 border-2 border-gray-200 dark:border-slate-600 md:hover:border-orange-300 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 active:bg-orange-50 dark:active:bg-orange-950/20"
+            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 ${
+              selectedGender === 'male' 
+                ? 'bg-gradient-to-r from-orange-100 to-orange-50 dark:from-orange-950/30 dark:to-orange-950/15 border-orange-300 dark:border-orange-500' 
+                : 'bg-white dark:bg-slate-800 md:hover:bg-gradient-to-r md:hover:from-orange-100 md:hover:to-orange-50 dark:md:hover:from-orange-950/30 dark:md:hover:to-orange-950/15 border-gray-200 dark:border-slate-600 md:hover:border-orange-300 active:bg-orange-50 dark:active:bg-orange-950/20'
+            }`}
           >
             <div className="flex items-center justify-center w-full min-w-0">
               <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-teto/20 to-teto/10 rounded-full flex items-center justify-center mr-3 sm:mr-4 md:mr-6 flex-shrink-0 text-xl sm:text-2xl md:text-3xl">
@@ -53,9 +70,13 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           </Button>
 
           <Button
-            onClick={() => onGenderSelect('female')}
+            onClick={() => handleGenderSelect('female')}
             variant="outline"
-            className="group bg-white dark:bg-slate-800 md:hover:bg-gradient-to-r md:hover:from-purple-100 md:hover:to-purple-50 dark:md:hover:from-purple-950/30 dark:md:hover:to-purple-950/15 border-2 border-gray-200 dark:border-slate-600 md:hover:border-purple-300 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 active:bg-purple-50 dark:active:bg-purple-950/20"
+            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 ${
+              selectedGender === 'female' 
+                ? 'bg-gradient-to-r from-purple-100 to-purple-50 dark:from-purple-950/30 dark:to-purple-950/15 border-purple-300 dark:border-purple-500' 
+                : 'bg-white dark:bg-slate-800 md:hover:bg-gradient-to-r md:hover:from-purple-100 md:hover:to-purple-50 dark:md:hover:from-purple-950/30 dark:md:hover:to-purple-950/15 border-gray-200 dark:border-slate-600 md:hover:border-purple-300 active:bg-purple-50 dark:active:bg-purple-950/20'
+            }`}
           >
             <div className="flex items-center justify-center w-full min-w-0">
               <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-egen/20 to-egen/10 rounded-full flex items-center justify-center mr-3 sm:mr-4 md:mr-6 flex-shrink-0 text-xl sm:text-2xl md:text-3xl">
