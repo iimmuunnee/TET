@@ -61,7 +61,7 @@ export default function NameInput({ onNameSubmit }: NameInputProps) {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-3 md:mb-4 px-2">
             이름이 뭐예요? 별명도 괜찮아요! 😊
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 px-4">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 px-4">xt-base text-slate-600 dark:text-slate-400 px-4">
             결과를 공유할 때 누구인지 알 수 있어요!
           </p>
         </div>
