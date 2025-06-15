@@ -52,12 +52,6 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => handleGenderSelect('male')}
             variant="outline"
-            onMouseLeave={(e) => {
-              e.currentTarget.blur();
-            }}
-            onMouseUp={(e) => {
-              e.currentTarget.blur();
-            }}
             className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 ${
               selectedGender === 'male' 
                 ? 'bg-gradient-to-r from-orange-100 to-orange-50 dark:from-orange-950/30 dark:to-orange-950/15 border-orange-300 dark:border-orange-500' 
@@ -78,12 +72,6 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => handleGenderSelect('female')}
             variant="outline"
-            onMouseLeave={(e) => {
-              e.currentTarget.blur();
-            }}
-            onMouseUp={(e) => {
-              e.currentTarget.blur();
-            }}
             className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 ${
               selectedGender === 'female' 
                 ? 'bg-gradient-to-r from-purple-100 to-purple-50 dark:from-purple-950/30 dark:to-purple-950/15 border-purple-300 dark:border-purple-500' 
