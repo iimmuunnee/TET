@@ -52,7 +52,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => handleGenderSelect('male')}
             variant="outline"
-            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 ${
+            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 focus:bg-transparent focus:border-current ${
               selectedGender === 'male' 
                 ? 'bg-gradient-to-r from-orange-100 to-orange-50 dark:from-orange-950/30 dark:to-orange-950/15 border-orange-300 dark:border-orange-500' 
                 : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-600 md:hover:bg-gradient-to-r md:hover:from-orange-100 md:hover:to-orange-50 dark:md:hover:from-orange-950/30 dark:md:hover:to-orange-950/15 md:hover:border-orange-300'
@@ -72,7 +72,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => handleGenderSelect('female')}
             variant="outline"
-            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 ${
+            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 focus:bg-transparent focus:border-current ${
               selectedGender === 'female' 
                 ? 'bg-gradient-to-r from-purple-100 to-purple-50 dark:from-purple-950/30 dark:to-purple-950/15 border-purple-300 dark:border-purple-500' 
                 : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-600 md:hover:bg-gradient-to-r md:hover:from-purple-100 md:hover:to-purple-50 dark:md:hover:from-purple-950/30 dark:md:hover:to-purple-950/15 md:hover:border-purple-300'
