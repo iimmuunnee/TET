@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4 pb-16">
       <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
         <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
