@@ -188,7 +188,7 @@ export default function Result() {
   };
 
   return (
-    <div className="py-4 sm:py-6 md:py-8 px-4 bg-white dark:bg-slate-900 h-full overflow-y-auto">
+    <div className="py-4 sm:py-6 md:py-8 px-4 bg-blue-50 dark:bg-slate-900 h-full overflow-y-auto">
       <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
         <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
@@ -200,7 +200,7 @@ export default function Result() {
         <ThemeToggle />
       </div>
       <div className="max-w-4xl mx-auto">
-        <div className="result-capture bg-white dark:bg-slate-900 p-6 rounded-lg mb-8">
+        <div className="result-capture bg-blue-50 dark:bg-slate-900 p-6 rounded-lg mb-8">
           {/* Result Header */}
           <div className="text-center mb-8 md:mb-12">
             <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 flex items-center justify-center text-6xl sm:text-7xl md:text-8xl">
