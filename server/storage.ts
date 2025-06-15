@@ -43,21 +43,4 @@ export class DatabaseStorage implements IStorage {
   }
 }
 
-import { db } from "./db";
-import { testResults } from "@shared/schema";
-import { eq } from "drizzle-orm";
-import type { InsertTestResult, TestResult } from "@shared/schema";
-
-export class DatabaseStorage {
-  async createTestResult(data: InsertTestResult): Promise<TestResult> {
-    const [result] = await db.insert(testResults).values(data).returning();
-    return result;
-  }
-
-  async getTestResult(id: number): Promise<TestResult | null> {
-    const [result] = await db.select().from(testResults).where(eq(testResults.id, id));
-    return result || null;
-  }
-}
-
 export const storage = new DatabaseStorage();
