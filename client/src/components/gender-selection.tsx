@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Home } from "lucide-react";
 import type { Gender } from "@/pages/test";
 
 interface GenderSelectionProps {
@@ -92,24 +92,27 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
         </div>
       </div>
 
-      <div className="p-4 text-center">
+      <div className="p-2 sm:p-4 flex justify-between">
         {onBackToName ? (
           <Button 
             variant="ghost" 
-            className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 font-medium transition-colors"
+            className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
             onClick={onBackToName}
           >
             <ArrowLeft className="mr-2" size={16} />
             이전으로
           </Button>
         ) : (
-          <Link href="/">
-            <Button variant="ghost" className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 font-medium transition-colors">
-              <ArrowLeft className="mr-2" size={16} />
-              홈으로 돌아가기
-            </Button>
-          </Link>
+          <div></div>
         )}
+        <Link href="/">
+          <Button 
+            variant="ghost" 
+            className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
+          >
+            처음으로 <Home className="ml-2" size={16} />
+          </Button>
+        </Link>
       </div>
     </div>
   );
