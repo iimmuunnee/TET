@@ -52,10 +52,10 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => handleGenderSelect('male')}
             variant="outline"
-            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 focus:bg-transparent focus:border-current ${
-              selectedGender === 'male' 
-                ? 'bg-gradient-to-r from-orange-100 to-orange-50 dark:from-orange-950/30 dark:to-orange-950/15 border-orange-300 dark:border-orange-500' 
-                : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-600 md:hover:bg-gradient-to-r md:hover:from-orange-100 md:hover:to-orange-50 dark:md:hover:from-orange-950/30 dark:md:hover:to-orange-950/15 md:hover:border-orange-300'
+            className={`w-full text-left p-4 sm:p-6 md:p-8 rounded-2xl border-2 h-auto justify-start transition-all duration-200 ${
+              selectedGender === 'male'
+                ? 'border-orange-400 bg-orange-50 dark:border-orange-500 dark:bg-orange-950/20' 
+                : 'bg-white dark:bg-slate-800 border-slate-200 md:hover:border-orange-300 md:hover:bg-orange-50 dark:border-slate-600 dark:md:hover:border-orange-400 dark:md:hover:bg-orange-950/10 active:bg-orange-50 dark:active:bg-orange-950/10'
             }`}
           >
             <div className="flex items-center justify-center w-full min-w-0">
@@ -72,10 +72,10 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
           <Button
             onClick={() => handleGenderSelect('female')}
             variant="outline"
-            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 focus:bg-transparent focus:border-current ${
-              selectedGender === 'female' 
-                ? 'bg-gradient-to-r from-purple-100 to-purple-50 dark:from-purple-950/30 dark:to-purple-950/15 border-purple-300 dark:border-purple-500' 
-                : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-600 md:hover:bg-gradient-to-r md:hover:from-purple-100 md:hover:to-purple-50 dark:md:hover:from-purple-950/30 dark:md:hover:to-purple-950/15 md:hover:border-purple-300'
+            className={`w-full text-left p-4 sm:p-6 md:p-8 rounded-2xl border-2 h-auto justify-start transition-all duration-200 ${
+              selectedGender === 'female'
+                ? 'border-purple-400 bg-purple-50 dark:border-purple-500 dark:bg-purple-950/20' 
+                : 'bg-white dark:bg-slate-800 border-slate-200 md:hover:border-purple-300 md:hover:bg-purple-50 dark:border-slate-600 dark:md:hover:border-purple-400 dark:md:hover:bg-purple-950/10 active:bg-purple-50 dark:active:bg-purple-950/10'
             }`}
           >
             <div className="flex items-center justify-center w-full min-w-0">
