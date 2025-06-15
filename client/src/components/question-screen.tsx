@@ -102,7 +102,7 @@ export default function QuestionScreen({
                   className={`w-full text-left p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border-2 h-auto min-h-[44px] sm:min-h-[48px] justify-start transition-all duration-200 touch-manipulation ${
                     selectedAnswer === option || tempSelectedAnswer === option
                       ? 'border-purple-400 bg-purple-50 dark:border-purple-500 dark:bg-purple-950/20 shadow-md' 
-                      : 'bg-white dark:bg-slate-800 border-slate-200 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-600 dark:hover:border-sky-400 dark:hover:bg-sky-950/10 active:bg-sky-50 dark:active:bg-sky-950/10 hover:shadow-sm'
+                      : 'bg-white dark:bg-slate-800 border-slate-200 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-600 dark:hover:border-sky-400 dark:hover:bg-sky-950/10 active:bg-sky-50 dark:active:bg-sky-950/10'
                   }`}
                   aria-label={`선택지 ${index + 1}: ${option.text}`}
                   role="radio"
