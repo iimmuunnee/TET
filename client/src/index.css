@@ -4,41 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Completely remove all default button interactions */
-button, 
-button:focus, 
-button:focus-visible, 
-button:focus:not(:focus-visible),
-button:active,
-button[role="button"]:focus,
-button[role="button"]:active {
+/* Fix blue flash on button hover/focus */
+button:focus {
   outline: none !important;
   box-shadow: none !important;
-  background-color: inherit !important;
-  border-color: inherit !important;
 }
 
-/* Prevent webkit/chrome specific button styling */
-button::-moz-focus-inner {
-  border: 0 !important;
-  padding: 0 !important;
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-button:focus {
-  background: none !important;
-  background-color: inherit !important;
-}
-
-/* Remove any blue highlighting or system colors */
-*:focus,
-*:active {
+/* Remove webkit tap highlight */
+button {
   -webkit-tap-highlight-color: transparent !important;
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -khtml-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
 }
 
 /* 접근성 개선 - 포커스 표시 */

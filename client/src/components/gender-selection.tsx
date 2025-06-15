@@ -16,7 +16,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
 
   const handleGenderSelect = (gender: Gender) => {
     setSelectedGender(gender);
-    
+
     // 모바일에서 시각적 피드백을 위한 딜레이
     setTimeout(() => {
       onGenderSelect(gender);
@@ -54,22 +54,8 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
             variant="outline"
             onMouseLeave={(e) => {
               e.currentTarget.blur();
-              e.preventDefault();
             }}
-            onFocus={(e) => {
-              e.currentTarget.blur();
-            }}
-            onMouseDown={(e) => {
-              e.preventDefault();
-            }}
-            style={{ 
-              WebkitTapHighlightColor: 'transparent',
-              WebkitTouchCallout: 'none',
-              WebkitUserSelect: 'none',
-              outline: 'none',
-              border: 'none'
-            }}
-            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 outline-none focus:outline-none focus:ring-0 focus:bg-transparent focus-visible:outline-none focus-visible:ring-0 focus-visible:bg-transparent active:outline-none ${
+            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 ${
               selectedGender === 'male' 
                 ? 'bg-gradient-to-r from-orange-100 to-orange-50 dark:from-orange-950/30 dark:to-orange-950/15 border-orange-300 dark:border-orange-500' 
                 : 'bg-white dark:bg-slate-800 md:hover:bg-gradient-to-r md:hover:from-orange-100 md:hover:to-orange-50 dark:md:hover:from-orange-950/30 dark:md:hover:to-orange-950/15 border-gray-200 dark:border-slate-600 md:hover:border-orange-300'
@@ -91,22 +77,8 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
             variant="outline"
             onMouseLeave={(e) => {
               e.currentTarget.blur();
-              e.preventDefault();
             }}
-            onFocus={(e) => {
-              e.currentTarget.blur();
-            }}
-            onMouseDown={(e) => {
-              e.preventDefault();
-            }}
-            style={{ 
-              WebkitTapHighlightColor: 'transparent',
-              WebkitTouchCallout: 'none',
-              WebkitUserSelect: 'none',
-              outline: 'none',
-              border: 'none'
-            }}
-            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 outline-none focus:outline-none focus:ring-0 focus:bg-transparent focus-visible:outline-none focus-visible:ring-0 focus-visible:bg-transparent active:outline-none ${
+            className={`group border-2 rounded-2xl p-4 sm:p-6 md:p-8 h-auto transition-all duration-300 md:transform md:hover:scale-105 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 ${
               selectedGender === 'female' 
                 ? 'bg-gradient-to-r from-purple-100 to-purple-50 dark:from-purple-950/30 dark:to-purple-950/15 border-purple-300 dark:border-purple-500' 
                 : 'bg-white dark:bg-slate-800 md:hover:bg-gradient-to-r md:hover:from-purple-100 md:hover:to-purple-50 dark:md:hover:from-purple-950/30 dark:md:hover:to-purple-950/15 border-gray-200 dark:border-slate-600 md:hover:border-purple-300'
