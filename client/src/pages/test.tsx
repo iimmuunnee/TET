@@ -157,7 +157,7 @@ export default function Test() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50 dark:bg-slate-900">
+    <div className="min-h-screen bg-sky-100 dark:bg-slate-900"></div>
       <div className="fixed top-4 right-4 z-50">
         <ThemeToggle />
       </div>
