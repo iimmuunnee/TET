@@ -1,4 +1,5 @@
 import { pgTable, text, serial, integer, jsonb, timestamp } from "drizzle-orm/pg-core";
+import { relations } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -18,6 +19,17 @@ export const testResults = pgTable("test_results", {
   egenScore: integer("egen_score").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
+
+export const usersRelations = relations(users, ({ many }) => ({
+  testResults: many(testResults),
+}));
+
+export const testResultsRelations = relations(testResults, ({ one }) => ({
+  user: one(users, {
+    fields: [testResults.id],
+    references: [users.id],
+  }),
+}));
 
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
