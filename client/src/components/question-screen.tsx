@@ -46,7 +46,7 @@ export default function QuestionScreen({
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 flex flex-col">
+    <div className="min-h-screen bg-sky-100 dark:bg-slate-900 flex flex-col">
       <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
         <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
