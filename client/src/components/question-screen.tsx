@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, Home } from "lucide-react";
+import { Link } from "wouter";
 import type { Answer } from "@/pages/test";
 
 interface Question {
@@ -137,13 +138,14 @@ export default function QuestionScreen({
           <ArrowLeft className="mr-2" size={16} />
           이전 문항
         </Button>
-        <Button 
-          onClick={onBackToGender}
-          variant="ghost"
-          className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
-        >
-          처음으로 <Home className="ml-2" size={16} />
-        </Button>
+        <Link href="/">
+          <Button 
+            variant="ghost"
+            className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
+          >
+            처음으로 <Home className="ml-2" size={16} />
+          </Button>
+        </Link>
       </div>
     </div>
   );
