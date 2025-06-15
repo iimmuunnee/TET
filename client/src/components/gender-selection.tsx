@@ -24,28 +24,30 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
   };
 
   return (
-    <div className="min-h-screen bg-sky-100 dark:bg-slate-900 flex flex-col">
-      <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
-        <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
+    <div className="min-h-screen bg-sky-100 dark:bg-slate-900 flex flex-col relative">
+      {/* 로고 */}
+      <div className="absolute top-2 sm:top-4 md:top-8 left-2 sm:left-4 md:left-8 z-50">
+        <div className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
           <span className="text-egen font-extrabold">E</span>
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
         </div>
       </div>
-      <div className="flex-1 flex items-center justify-center p-4 pt-16 sm:pt-20 md:pt-24">
-        <div className="max-w-lg w-full">
-        <div className="text-center mb-4 md:mb-6">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4">
+
+      {/* 메인 컨텐츠 */}
+      <div className="flex-1 flex items-center justify-center px-2 sm:px-4 pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-16 sm:pb-20">
+        <div className="w-full max-w-xs sm:max-w-md md:max-w-lg">
+        {/* Title */}
+        <div className="text-center mb-6 sm:mb-8 md:mb-10">
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-2 sm:mb-3">
             <span className="text-teto font-extrabold">테토</span>
             <span className="text-slate-800 dark:text-slate-200">-</span>
             <span className="text-egen font-extrabold">에겐</span>{" "}
             <span className="text-slate-800 dark:text-slate-200">테스트</span>
           </h1>
-        </div>
-
-        <div className="text-center mb-6 md:mb-8">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-3 md:mb-4 px-2">성별을 선택해주세요!</h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 px-4">정확한 결과를 위해 성별을 선택해주세요 (🖍️는 없어요❌)</p>
+          <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400">
+            성별을 선택해주세요
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 md:mb-8 px-2">

@@ -5,6 +5,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 기본 반응형 설정 */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 터치 디바이스 최적화 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
 /* Remove all focus and active states that cause blue flash */
 button:focus,
 button:active,
@@ -24,12 +43,21 @@ button {
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   user-select: none !important;
+  touch-action: manipulation;
 }
 
 button:active {
   transform: none !important;
   background-color: inherit !important;
   border-color: inherit !important;
+}
+
+/* 모바일에서의 버튼 터치 영역 확대 */
+@media (max-width: 768px) {
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 /* 접근성 개선 - 포커스 표시 */
@@ -47,6 +75,41 @@ input:focus-visible,
 textarea:focus-visible {
   @apply outline-none ring-2 ring-purple-400 ring-offset-1 ring-offset-background;
   box-shadow: 0 0 0 1px var(--background), 0 0 0 3px rgb(168 85 247 / 0.4);
+}
+
+/* 스크롤 최적화 */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 텍스트 선택 최적화 */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 반응형 컨테이너 */
+.responsive-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    max-width: 1024px;
+    padding: 0 2rem;
+  }
+}168 85 247 / 0.4);
 }
 
 /* 카드나 버튼 등의 상호작용 요소 포커스 */
