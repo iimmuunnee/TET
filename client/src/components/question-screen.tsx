@@ -18,6 +18,7 @@ interface QuestionScreenProps {
   onAnswerSelect: (answer: Answer) => void;
   onPreviousQuestion: () => void;
   onBackToGender: () => void;
+  onResetToHome: () => void;
   canGoBack: boolean;
 }
 
@@ -31,6 +32,7 @@ export default function QuestionScreen({
   onAnswerSelect,
   onPreviousQuestion,
   onBackToGender,
+  onResetToHome,
   canGoBack
 }: QuestionScreenProps) {
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
@@ -138,14 +140,13 @@ export default function QuestionScreen({
           <ArrowLeft className="mr-2" size={16} />
           이전 문항
         </Button>
-        <Link href="/">
-          <Button 
-            variant="ghost"
-            className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
-          >
-            처음으로 <Home className="ml-2" size={16} />
-          </Button>
-        </Link>
+        <Button 
+          onClick={onResetToHome}
+          variant="ghost"
+          className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
+        >
+          처음으로 <Home className="ml-2" size={16} />
+        </Button>
       </div>
     </div>
   );

@@ -156,6 +156,17 @@ export default function Test() {
     setAnswers([]);
   };
 
+  const handleResetToHome = () => {
+    // 모든 진행률 초기화
+    localStorage.removeItem('teto-egen-test-progress');
+    setUserName('');
+    setGender(null);
+    setCurrentStep('name');
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    navigate('/');
+  };
+
   return (
     <div className="min-h-screen bg-sky-100 dark:bg-slate-900">
       <div className="fixed top-4 right-4 z-50">
@@ -179,6 +190,7 @@ export default function Test() {
           onAnswerSelect={handleAnswerSelect}
           onPreviousQuestion={handlePreviousQuestion}
           onBackToGender={handleBackToGender}
+          onResetToHome={handleResetToHome}
           canGoBack={currentQuestionIndex > 0}
         />
       )}
