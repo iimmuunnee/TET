@@ -35,7 +35,7 @@ export default function Home() {
 
           {/* Visual Elements */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 md:mb-8 max-w-md mx-auto px-4">
-            <Card className="border-2 border-teto/20 hover:border-teto/30 transition-colors bg-slate-50 dark:bg-slate-800">
+            <Card className="border-2 border-teto/20 hover:border-teto/30 transition-colors bg-white dark:bg-slate-800">
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
                   <div className="w-18 h-18 sm:w-20 sm:h-20 bg-gradient-to-br from-teto/20 to-teto/10 rounded-full flex items-center justify-center text-3xl sm:text-4xl">
@@ -49,7 +49,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">외향적·주도적 성향<br/>비율로 분석</p>
               </CardContent>
             </Card>
-            <Card className="border-2 border-egen/20 hover:border-egen/30 transition-colors bg-slate-50 dark:bg-slate-800">
+            <Card className="border-2 border-egen/20 hover:border-egen/30 transition-colors bg-white dark:bg-slate-800">
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
                   <div className="w-18 h-18 sm:w-20 sm:h-20 bg-gradient-to-br from-egen/20 to-egen/10 rounded-full flex items-center justify-center text-3xl sm:text-4xl">
@@ -66,7 +66,7 @@ export default function Home() {
           </div>
 
           {/* Description */}
-          <Card className="bg-slate-50/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-50/50 dark:border-slate-700/50 mb-6 md:mb-8 mx-4">
+          <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-white/50 dark:border-slate-700/50 mb-6 md:mb-8 mx-4">
             <CardContent className="p-4 sm:p-6">
               <div className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-3 text-center">
                 총 <strong>20문항</strong>의 질문으로 당신의 성격 유형과
