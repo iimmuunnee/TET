@@ -132,10 +132,9 @@ export default function QuestionScreen({
       {/* Navigation */}
       <div className="p-2 sm:p-4 flex justify-between">
         <Button 
-          onClick={onPreviousQuestion}
+          onClick={canGoBack ? onPreviousQuestion : onBackToGender}
           variant="ghost"
           className="text-slate-500 hover:text-slate-700 font-medium transition-colors"
-          disabled={!canGoBack}
         >
           <ArrowLeft className="mr-2" size={16} />
           이전 문항
