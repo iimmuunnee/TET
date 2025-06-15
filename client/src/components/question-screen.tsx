@@ -54,7 +54,7 @@ export default function QuestionScreen({
         </div>
 
         {/* Progress Bar */}
-        <div className="mb-6 md:mb-8">
+        <div className="mb-6 md:mb-8 px-2 sm:px-0">
           <div className="flex justify-between items-center mb-2">
             <span className="text-xs sm:text-sm font-medium text-slate-600">진행률</span>
             <span className="text-xs sm:text-sm font-medium text-slate-600">
