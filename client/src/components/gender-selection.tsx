@@ -12,8 +12,8 @@ interface GenderSelectionProps {
 export default function GenderSelection({ onGenderSelect, onBackToName }: GenderSelectionProps) {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="fixed top-8 left-8 z-50">
-        <div className="text-7xl font-bold">
+      <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
+        <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
           <span className="text-teto font-extrabold">T</span>
           <span className="text-egen font-extrabold">E</span>
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
