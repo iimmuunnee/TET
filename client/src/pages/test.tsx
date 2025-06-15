@@ -36,7 +36,7 @@ export default function Test() {
       try {
         const progress = JSON.parse(savedProgress);
         if (progress.userName) setUserName(progress.userName);
-        if (progress.gender) setGender(progress.gender);
+        if (progress.gender && progress.currentStep !== 'gender') setGender(progress.gender);
         if (progress.currentStep && progress.currentStep !== 'loading') setCurrentStep(progress.currentStep);
         if (progress.currentQuestionIndex) setCurrentQuestionIndex(progress.currentQuestionIndex);
         if (progress.answers) setAnswers(progress.answers);
