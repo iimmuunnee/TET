@@ -8,10 +8,26 @@
 button:focus {
   outline: none !important;
   box-shadow: none !important;
+  background-color: transparent !important;
 }
 
 button:focus-visible {
   outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Remove default browser button styles */
+button:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Prevent any default button background colors */
+button[role="button"]:focus,
+button[role="button"]:active {
+  background-color: transparent !important;
   box-shadow: none !important;
 }
 
