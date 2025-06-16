@@ -72,7 +72,7 @@ export default function Home() {
               <div className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-3 text-center">
                 총 <strong>35문항</strong>의 질문으로 당신의 성격 유형과
                 <br/>
-                <strong>테토-에겐 비율</strong>, 연애 스타일을 분석해보세요!
+                <strong><span className="text-teto">테토</span>-<span className="text-egen">에겐</span> 비율</strong>, 연애 스타일을 분석해보세요!
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 text-center leading-relaxed">
                 💡 우측 상단에서 라이트/다크 모드 변경 가능
