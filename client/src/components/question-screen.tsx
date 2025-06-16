@@ -113,7 +113,7 @@ export default function QuestionScreen({
                   }`}
                   aria-label={`선택지 ${index + 1}: ${option.text}`}
                   role="radio"
-                  aria-checked={selectedAnswer?.text === option.text}
+                  aria-checked={clickedIndex === index}
                 >
                   <div className="flex items-start w-full gap-3">
                     <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 mt-0.5 flex-shrink-0 flex items-center justify-center transition-colors ${

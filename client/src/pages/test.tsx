@@ -186,7 +186,7 @@ export default function Test() {
           currentQuestionIndex={currentQuestionIndex}
           totalQuestions={questions.length}
           question={questions[currentQuestionIndex]}
-          selectedAnswer={answers[currentQuestionIndex]}
+          selectedAnswer={undefined}
           onAnswerSelect={handleAnswerSelect}
           onPreviousQuestion={handlePreviousQuestion}
           onBackToGender={handleBackToGender}
