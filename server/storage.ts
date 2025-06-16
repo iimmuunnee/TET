@@ -1,4 +1,3 @@
-
 import { users, testResults, type User, type InsertUser, type TestResult, type InsertTestResult } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
@@ -41,6 +40,39 @@ export class DatabaseStorage implements IStorage {
   async getTestResult(id: number): Promise<TestResult | undefined> {
     const [result] = await db.select().from(testResults).where(eq(testResults.id, id));
     return result || undefined;
+  }
+
+  async getStatistics() {
+    const results = await db.select().from(testResults);
+
+    const totalTests = results.length;
+    const maleCount = results.filter(r => r.gender === 'male').length;
+    const femaleCount = results.filter(r => r.gender === 'female').length;
+    const tetoCount = results.filter(r => r.resultType === 'teto').length;
+    const egenCount = results.filter(r => r.resultType === 'egen').length;
+
+    const tetoMale = results.filter(r => r.gender === 'male' && r.resultType === 'teto').length;
+    const tetoFemale = results.filter(r => r.gender === 'female' && r.resultType === 'teto').length;
+    const egenMale = results.filter(r => r.gender === 'male' && r.resultType === 'egen').length;
+    const egenFemale = results.filter(r => r.gender === 'female' && r.resultType === 'egen').length;
+
+    return {
+      totalTests,
+      genderDistribution: {
+        male: maleCount,
+        female: femaleCount
+      },
+      typeDistribution: {
+        teto: tetoCount,
+        egen: egenCount
+      },
+      genderTypeDistribution: {
+        tetoMale,
+        tetoFemale,
+        egenMale,
+        egenFemale
+      }
+    };
   }
 }
 

@@ -80,12 +80,18 @@ export default function Home() {
           </Card>
 
           {/* Start Button */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/test">
             <Button
               size="lg"
               className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 sm:py-4 px-8 sm:px-12 rounded-full text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg mx-4"
             >
               테스트 시작하기 <ArrowRight className="ml-2" size={18} />
+            </Button>
+          </Link>
+          <Link href="/statistics">
+            <Button size="lg" variant="outline" className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold py-3 sm:py-4 px-8 sm:px-12 rounded-full text-base sm:text-lg transition-all duration-300 transform hover:scale-105 mx-4">
+              📊 통계 보기 <ArrowRight className="ml-2" size={18} />
             </Button>
           </Link>
         </div>

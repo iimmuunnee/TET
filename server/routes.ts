@@ -42,6 +42,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/statistics", async (req, res) => {
+    try {
+      const stats = await storage.getStatistics();
+      res.json(stats);
+    } catch (error) {
+      console.error("Statistics error:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
