@@ -50,7 +50,7 @@ export default function QuestionScreen({
     <div className="min-h-screen bg-sky-100 dark:bg-slate-900 flex flex-col relative">
       {/* Logo */}
       <div className="absolute top-2 sm:top-4 md:top-8 left-2 sm:left-4 md:left-8 z-10">
-        <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
           <span className="text-teto font-extrabold">T</span>
           <span className="text-egen font-extrabold">E</span>
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>

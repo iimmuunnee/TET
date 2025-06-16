@@ -191,7 +191,7 @@ export default function Result() {
   return (
     <div className="py-4 sm:py-6 md:py-8 px-4 bg-sky-100 dark:bg-slate-900 h-full overflow-y-auto">
       <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-10">
-        <div className="text-2xl sm:text-3xl md:text-4xl font-bold">
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
           <span className="text-teto font-extrabold">T</span>
           <span className="text-egen font-extrabold">E</span>
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
