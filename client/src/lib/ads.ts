@@ -1,18 +1,18 @@
 // Google AdSense 설정
 export const ADS_CONFIG = {
-  // AdSense 승인 후 실제 값으로 교체
-  CLIENT_ID: 'ca-pub-XXXXXXXXXXXXXXXX', // 실제 AdSense 클라이언트 ID
+  // AdSense 클라이언트 ID
+  CLIENT_ID: 'ca-pub-8774598116918128',
   SLOTS: {
-    BANNER_TOP: '1234567890',    // 상단 배너 광고 슬롯 ID
-    BANNER_BOTTOM: '1234567891', // 하단 배너 광고 슬롯 ID
-    SIDEBAR: '1234567892',       // 사이드바 광고 슬롯 ID
-    RESULT_TOP: '1234567893',    // 결과 페이지 상단 광고
-    RESULT_BOTTOM: '1234567894', // 결과 페이지 하단 광고
+    BANNER_TOP: '1234567890',    // 상단 배너 광고 슬롯 ID (광고 단위 생성 후 교체)
+    BANNER_BOTTOM: '1234567891', // 하단 배너 광고 슬롯 ID (광고 단위 생성 후 교체)
+    SIDEBAR: '1234567892',       // 사이드바 광고 슬롯 ID (광고 단위 생성 후 교체)
+    RESULT_TOP: '1234567893',    // 결과 페이지 상단 광고 (광고 단위 생성 후 교체)
+    RESULT_BOTTOM: '1234567894', // 결과 페이지 하단 광고 (광고 단위 생성 후 교체)
   },
-  // 광고 활성화 상태 (개발/테스트 시에는 false)
-  ENABLED: false,
-  // 테스트 모드 (개발 환경에서 사용)
-  TEST_MODE: true
+  // 광고 활성화 상태
+  ENABLED: true,
+  // 테스트 모드
+  TEST_MODE: false
 };
 
 // 환경별 설정

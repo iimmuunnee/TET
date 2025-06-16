@@ -12,6 +12,8 @@ import Statistics from "@/pages/statistics";
 import { useEffect } from "react";
 import { initGA } from "./lib/analytics";
 import { useAnalytics } from "./hooks/use-analytics";
+import { loadAdSenseScript } from "./components/google-adsense";
+import { getAdsConfig } from "./lib/ads";
 
 function Router() {
   // Track page views when routes change
@@ -37,13 +39,19 @@ function Footer() {
 }
 
 function App() {
-  // Initialize Google Analytics when app loads
+  // Initialize Google Analytics and AdSense when app loads
   useEffect(() => {
-    // Verify required environment variable is present
+    // Initialize Google Analytics
     if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
       console.warn('Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID');
     } else {
       initGA();
+    }
+
+    // Initialize AdSense
+    const adsConfig = getAdsConfig();
+    if (adsConfig.ENABLED) {
+      loadAdSenseScript(adsConfig.CLIENT_ID);
     }
   }, []);
 
