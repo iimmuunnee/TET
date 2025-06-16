@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -21,8 +22,6 @@ interface QuestionScreenProps {
   onResetToHome: () => void;
   canGoBack: boolean;
 }
-
-import { useState, useEffect } from "react";
 
 export default function QuestionScreen({
   currentQuestionIndex,
