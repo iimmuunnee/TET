@@ -70,7 +70,7 @@ export default function Home() {
           <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-white/50 dark:border-slate-700/50 mb-6 md:mb-8 mx-4">
             <CardContent className="p-4 sm:p-6">
               <div className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-3 text-center">
-                총 <strong>20문항</strong>의 질문으로 당신의 성격 유형과
+                총 <strong>35문항</strong>의 질문으로 당신의 성격 유형과
                 <br/>
                 <strong>테토-에겐 비율</strong>, 연애 스타일을 분석해보세요!
               </div>
