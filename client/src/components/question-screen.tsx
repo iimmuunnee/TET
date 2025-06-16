@@ -37,21 +37,16 @@ export default function QuestionScreen({
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
-  // 질문이 바뀔 때마다 클릭 상태 초기화
+  // 질문이 바뀔 때마다 클릭 상태 강제 초기화
   useEffect(() => {
     setClickedIndex(null);
-  }, [currentQuestionIndex]);
+  }, [currentQuestionIndex, question.text]);
 
   const handleAnswerSelect = (answer: Answer, optionIndex: number) => {
     setClickedIndex(optionIndex);
-
-    // 짧은 딜레이 후 다음 문항으로 이동하면서 선택 상태 초기화
+    
     setTimeout(() => {
       onAnswerSelect(answer);
-      // 다음 문항에서 자동으로 빈 공간 클릭 효과
-      setTimeout(() => {
-        setClickedIndex(null);
-      }, 100);
     }, 150);
   };
 
