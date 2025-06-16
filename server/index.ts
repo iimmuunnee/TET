@@ -7,6 +7,9 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 
+// Trust proxy for Replit deployment
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet({
   contentSecurityPolicy: {
@@ -22,7 +25,7 @@ app.use(helmet({
   }
 }));
 
-// Rate limiting - 통합된 설정
+// Rate limiting - 일반 요청 제한
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15분
   max: 100, // 일반 요청 제한
@@ -31,29 +34,12 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-// API 엔드포인트에 더 엄격한 제한
-const apiLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15분
-  max: 20, // API 요청 제한
-  message: { error: "API 요청이 너무 많습니다. 잠시 후 다시 시도해주세요." },
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-// 테스트 결과 저장에 대한 제한
-const testSubmitLimiter = rateLimit({
-  windowMs: 5 * 60 * 1000, // 5분
-  max: 3, // 테스트 제출 제한
-  message: { error: "테스트 제출이 너무 많습니다. 잠시 후 다시 시도해주세요." },
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
 // Slow down middleware - 점진적 지연
 const speedLimiter = slowDown({
   windowMs: 15 * 60 * 1000, // 15분
   delayAfter: 50, // 50회 요청 후 지연 시작
-  delayMs: 500 // 500ms씩 지연 증가
+  delayMs: () => 500, // 고정된 500ms 지연
+  validate: { delayMs: false } // 경고 메시지 비활성화
 });
 
 // Apply middleware
