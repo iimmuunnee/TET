@@ -21,7 +21,8 @@ export const getAdsConfig = () => {
   
   return {
     ...ADS_CONFIG,
-    ENABLED: !isDevelopment && ADS_CONFIG.ENABLED,
+    // 광고 영역은 항상 표시하되, 실제 광고는 프로덕션에서만
+    ENABLED: ADS_CONFIG.ENABLED,
     TEST_MODE: isDevelopment || ADS_CONFIG.TEST_MODE
   };
 };
