@@ -125,18 +125,37 @@ export default function Statistics() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">🔥 테토 성향</span>
-                    <span className="text-sm font-bold text-orange-600">
-                      {Math.round((stats.typeDistribution.teto / stats.totalTests) * 100)}%
-                    </span>
+                <div className="space-y-4">
+                  {/* 테토 성향 */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">🔥 테토 성향</span>
+                      <span className="text-sm font-bold text-orange-600">
+                        {Math.round((stats.typeDistribution.teto / stats.totalTests) * 100)}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <div 
+                        className="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${(stats.typeDistribution.teto / stats.totalTests) * 100}%` }}
+                      ></div>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">🌸 에겐 성향</span>
-                    <span className="text-sm font-bold text-purple-600">
-                      {Math.round((stats.typeDistribution.egen / stats.totalTests) * 100)}%
-                    </span>
+
+                  {/* 에겐 성향 */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">🌸 에겐 성향</span>
+                      <span className="text-sm font-bold text-purple-600">
+                        {Math.round((stats.typeDistribution.egen / stats.totalTests) * 100)}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <div 
+                        className="bg-gradient-to-r from-purple-400 to-pink-500 h-3 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${(stats.typeDistribution.egen / stats.totalTests) * 100}%` }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -151,30 +170,69 @@ export default function Statistics() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">🔥 테토남</span>
-                    <span className="text-sm font-bold text-orange-600">
-                      {Math.round((stats.genderTypeDistribution.tetoMale / stats.totalTests) * 100)}%
-                    </span>
+                <div className="space-y-4">
+                  {/* 테토남 */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">🔥 테토남</span>
+                      <span className="text-sm font-bold text-orange-600">
+                        {Math.round((stats.genderTypeDistribution.tetoMale / stats.totalTests) * 100)}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                      <div 
+                        className="bg-gradient-to-r from-orange-500 to-red-600 h-2.5 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${(stats.genderTypeDistribution.tetoMale / stats.totalTests) * 100}%` }}
+                      ></div>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">⚡ 테토녀</span>
-                    <span className="text-sm font-bold text-orange-600">
-                      {Math.round((stats.genderTypeDistribution.tetoFemale / stats.totalTests) * 100)}%
-                    </span>
+
+                  {/* 테토녀 */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">⚡ 테토녀</span>
+                      <span className="text-sm font-bold text-orange-600">
+                        {Math.round((stats.genderTypeDistribution.tetoFemale / stats.totalTests) * 100)}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                      <div 
+                        className="bg-gradient-to-r from-orange-400 to-yellow-500 h-2.5 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${(stats.genderTypeDistribution.tetoFemale / stats.totalTests) * 100}%` }}
+                      ></div>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">🌙 에겐남</span>
-                    <span className="text-sm font-bold text-purple-600">
-                      {Math.round((stats.genderTypeDistribution.egenMale / stats.totalTests) * 100)}%
-                    </span>
+
+                  {/* 에겐남 */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">🌙 에겐남</span>
+                      <span className="text-sm font-bold text-purple-600">
+                        {Math.round((stats.genderTypeDistribution.egenMale / stats.totalTests) * 100)}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                      <div 
+                        className="bg-gradient-to-r from-purple-500 to-indigo-600 h-2.5 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${(stats.genderTypeDistribution.egenMale / stats.totalTests) * 100}%` }}
+                      ></div>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">🌸 에겐녀</span>
-                    <span className="text-sm font-bold text-purple-600">
-                      {Math.round((stats.genderTypeDistribution.egenFemale / stats.totalTests) * 100)}%
-                    </span>
+
+                  {/* 에겐녀 */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">🌸 에겐녀</span>
+                      <span className="text-sm font-bold text-purple-600">
+                        {Math.round((stats.genderTypeDistribution.egenFemale / stats.totalTests) * 100)}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                      <div 
+                        className="bg-gradient-to-r from-pink-400 to-purple-500 h-2.5 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${(stats.genderTypeDistribution.egenFemale / stats.totalTests) * 100}%` }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
