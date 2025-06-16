@@ -183,13 +183,13 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">🔥 테토남</span>
                       <span className="text-sm font-bold text-orange-600">
-                        {stats.totalTests > 0 ? Math.round((stats.genderTypeDistribution.tetoMale / stats.totalTests) * 100) : 0}%
+                        {safePercentage(stats.genderTypeDistribution.tetoMale, stats.totalTests)}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div 
                         className="bg-gradient-to-r from-orange-500 to-red-600 h-2.5 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${stats.totalTests > 0 ? (stats.genderTypeDistribution.tetoMale / stats.totalTests) * 100 : 0}%` }}
+                        style={{ width: `${safePercentage(stats.genderTypeDistribution.tetoMale, stats.totalTests)}%` }}
                       ></div>
                     </div>
                   </div>
@@ -199,13 +199,13 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">⚡ 테토녀</span>
                       <span className="text-sm font-bold text-orange-600">
-                        {stats.totalTests > 0 ? Math.round((stats.genderTypeDistribution.tetoFemale / stats.totalTests) * 100) : 0}%
+                        {safePercentage(stats.genderTypeDistribution.tetoFemale, stats.totalTests)}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div 
                         className="bg-gradient-to-r from-orange-400 to-yellow-500 h-2.5 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${stats.totalTests > 0 ? (stats.genderTypeDistribution.tetoFemale / stats.totalTests) * 100 : 0}%` }}
+                        style={{ width: `${safePercentage(stats.genderTypeDistribution.tetoFemale, stats.totalTests)}%` }}
                       ></div>
                     </div>
                   </div>
@@ -215,13 +215,13 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">🌙 에겐남</span>
                       <span className="text-sm font-bold text-purple-600">
-                        {stats.totalTests > 0 ? Math.round((stats.genderTypeDistribution.egenMale / stats.totalTests) * 100) : 0}%
+                        {safePercentage(stats.genderTypeDistribution.egenMale, stats.totalTests)}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div 
                         className="bg-gradient-to-r from-purple-500 to-indigo-600 h-2.5 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${stats.totalTests > 0 ? (stats.genderTypeDistribution.egenMale / stats.totalTests) * 100 : 0}%` }}
+                        style={{ width: `${safePercentage(stats.genderTypeDistribution.egenMale, stats.totalTests)}%` }}
                       ></div>
                     </div>
                   </div>
@@ -231,13 +231,13 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">🌸 에겐녀</span>
                       <span className="text-sm font-bold text-purple-600">
-                        {stats.totalTests > 0 ? Math.round((stats.genderTypeDistribution.egenFemale / stats.totalTests) * 100) : 0}%
+                        {safePercentage(stats.genderTypeDistribution.egenFemale, stats.totalTests)}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div 
                         className="bg-gradient-to-r from-pink-400 to-purple-500 h-2.5 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${stats.totalTests > 0 ? (stats.genderTypeDistribution.egenFemale / stats.totalTests) * 100 : 0}%` }}
+                        style={{ width: `${safePercentage(stats.genderTypeDistribution.egenFemale, stats.totalTests)}%` }}
                       ></div>
                     </div>
                   </div>
