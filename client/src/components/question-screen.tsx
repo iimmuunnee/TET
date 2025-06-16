@@ -22,7 +22,7 @@ interface QuestionScreenProps {
   canGoBack: boolean;
 }
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function QuestionScreen({
   currentQuestionIndex,
@@ -37,6 +37,11 @@ export default function QuestionScreen({
 }: QuestionScreenProps) {
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
   const [tempSelectedAnswer, setTempSelectedAnswer] = useState<Answer | null>(null);
+
+  // Reset tempSelectedAnswer when question changes
+  useEffect(() => {
+    setTempSelectedAnswer(null);
+  }, [currentQuestionIndex]);
 
   const handleAnswerSelect = (answer: Answer) => {
     setTempSelectedAnswer(answer);
