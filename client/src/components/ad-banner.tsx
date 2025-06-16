@@ -25,7 +25,8 @@ export function AdBanner({ position, className = "" }: AdBannerProps) {
 
   const config = adConfig[position];
 
-  if (!adsConfig.ENABLED) {
+  // 광고가 비활성화되어 있거나 개발 환경에서는 플레이스홀더 표시
+  if (!adsConfig.ENABLED || adsConfig.TEST_MODE) {
     return (
       <Card className={`${config.width} ${config.height} ${className} bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 border-dashed border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center`}>
         <div className="text-center text-gray-500 dark:text-gray-400">
