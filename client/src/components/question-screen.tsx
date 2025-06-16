@@ -45,7 +45,7 @@ export default function QuestionScreen({
 
   const handleAnswerSelect = (answer: Answer, optionIndex: number) => {
     setClickedIndex(optionIndex);
-    
+
     // 즉시 답변 처리 (딜레이 제거)
     setTimeout(() => {
       onAnswerSelect(answer);
@@ -62,7 +62,7 @@ export default function QuestionScreen({
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
         </div>
       </div>
-      
+
       {/* 메인 컨텐츠 영역 */}
       <div className="flex-1 flex items-center justify-center px-2 sm:px-4 pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-16 sm:pb-20">
         <div className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
