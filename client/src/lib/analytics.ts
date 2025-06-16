@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-// Initialize Google Analytics
+// Initialize Google Analytics with consent management
 export const initGA = () => {
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
@@ -15,19 +15,31 @@ export const initGA = () => {
     return;
   }
 
+  // Initialize gtag with consent defaults
+  const script0 = document.createElement('script');
+  script0.innerHTML = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied'
+    });
+    gtag('js', new Date());
+  `;
+  document.head.appendChild(script0);
+
   // Add Google Analytics script to the head
   const script1 = document.createElement('script');
   script1.async = true;
   script1.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
   document.head.appendChild(script1);
 
-  // Initialize gtag
+  // Configure Google Analytics
   const script2 = document.createElement('script');
   script2.innerHTML = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '${measurementId}');
+    gtag('config', '${measurementId}', {
+      'anonymize_ip': true
+    });
   `;
   document.head.appendChild(script2);
 };
