@@ -9,8 +9,8 @@ export const ADS_CONFIG = {
     RESULT_TOP: '1234567893',    // 결과 페이지 상단 광고 (광고 단위 생성 후 교체)
     RESULT_BOTTOM: '1234567894', // 결과 페이지 하단 광고 (광고 단위 생성 후 교체)
   },
-  // 광고 활성화 상태
-  ENABLED: true,
+  // 광고 활성화 상태 (플레이스홀더 항상 표시)
+  ENABLED: false,
   // 테스트 모드
   TEST_MODE: false
 };
