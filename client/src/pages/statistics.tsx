@@ -5,6 +5,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Users, TrendingUp, Heart, Zap } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { AdBanner } from "@/components/ad-banner";
 
 interface StatisticsData {
   totalTests: number;
@@ -239,6 +240,11 @@ export default function Statistics() {
             </Card>
           </div>
         )}
+
+        {/* 광고 배너 */}
+        <div className="flex justify-center mb-8">
+          <AdBanner position="top" />
+        </div>
 
         <div className="text-center">
           <Link href="/">
