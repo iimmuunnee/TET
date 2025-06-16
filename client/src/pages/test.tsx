@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import NameInput from "@/components/name-input";
 import GenderSelection from "@/components/gender-selection";
-import QuestionScreen from "@/components/question-screen";
+import QuestionScreen from "@/components/question-screen-new";
 import LoadingScreen from "@/components/loading-screen";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { questions } from "@/data/questions";
@@ -186,7 +186,6 @@ export default function Test() {
           currentQuestionIndex={currentQuestionIndex}
           totalQuestions={questions.length}
           question={questions[currentQuestionIndex]}
-          selectedAnswer={undefined}
           onAnswerSelect={handleAnswerSelect}
           onPreviousQuestion={handlePreviousQuestion}
           onBackToGender={handleBackToGender}
