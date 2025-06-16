@@ -36,21 +36,28 @@ export default function QuestionScreen({
   canGoBack
 }: QuestionScreenProps) {
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-  const [tempSelectedAnswer, setTempSelectedAnswer] = useState<Answer | null>(null);
+  const [tempSelectedIndex, setTempSelectedIndex] = useState<number | null>(null);
+  const [lastQuestionIndex, setLastQuestionIndex] = useState<number>(currentQuestionIndex);
 
   // Clear temp selection immediately when question changes
   useEffect(() => {
-    setTempSelectedAnswer(null);
-  }, [currentQuestionIndex]);
+    if (lastQuestionIndex !== currentQuestionIndex) {
+      setTempSelectedIndex(null);
+      setLastQuestionIndex(currentQuestionIndex);
+    }
+  }, [currentQuestionIndex, lastQuestionIndex]);
 
-  const handleAnswerSelect = (answer: Answer) => {
-    setTempSelectedAnswer(answer);
+  const handleAnswerSelect = (answer: Answer, optionIndex: number) => {
+    setTempSelectedIndex(optionIndex);
     
     // 모바일에서 시각적 피드백을 위한 딜레이
     setTimeout(() => {
-      setTempSelectedAnswer(null);
-      onAnswerSelect(answer);
-    }, 200); // Reduced delay to minimize visual artifacts
+      // Only proceed if we're still on the same question
+      if (lastQuestionIndex === currentQuestionIndex) {
+        setTempSelectedIndex(null);
+        onAnswerSelect(answer);
+      }
+    }, 200);
   };
 
   return (
@@ -102,10 +109,10 @@ export default function QuestionScreen({
               {question.options.map((option, index) => (
                 <Button
                   key={index}
-                  onClick={() => handleAnswerSelect(option)}
+                  onClick={() => handleAnswerSelect(option, index)}
                   variant="outline"
                   className={`w-full text-left p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border-2 h-auto min-h-[44px] sm:min-h-[48px] justify-start transition-all duration-200 touch-manipulation ${
-                    (selectedAnswer?.text === option.text) || (tempSelectedAnswer?.text === option.text)
+                    (selectedAnswer?.text === option.text) || (tempSelectedIndex === index)
                       ? 'border-purple-400 bg-purple-50 dark:border-purple-500 dark:bg-purple-950/20 shadow-md' 
                       : 'bg-white dark:bg-slate-800 border-slate-200 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-600 dark:hover:border-sky-400 dark:hover:bg-sky-950/10 active:bg-sky-50 dark:active:bg-sky-950/10'
                   }`}
@@ -115,11 +122,11 @@ export default function QuestionScreen({
                 >
                   <div className="flex items-start w-full gap-3">
                     <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 mt-0.5 flex-shrink-0 flex items-center justify-center transition-colors ${
-                      (selectedAnswer?.text === option.text) || (tempSelectedAnswer?.text === option.text)
+                      (selectedAnswer?.text === option.text) || (tempSelectedIndex === index)
                         ? 'border-purple-500 bg-purple-500/10' 
                         : 'border-slate-300 dark:border-slate-500'
                     }`}>
-                      {((selectedAnswer?.text === option.text) || (tempSelectedAnswer?.text === option.text)) && (
+                      {((selectedAnswer?.text === option.text) || (tempSelectedIndex === index)) && (
                         <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-purple-500" />
                       )}
                     </div>
