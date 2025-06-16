@@ -55,19 +55,19 @@ export default function Statistics() {
 
   return (
     <div className="min-h-screen bg-sky-100 dark:bg-slate-900 py-8 px-4">
-      <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-50">
-        <div className="text-4xl sm:text-5xl md:text-7xl font-bold">
+      <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-10">
+        <div className="text-2xl sm:text-3xl md:text-4xl font-bold">
           <span className="text-teto font-extrabold">T</span>
           <span className="text-egen font-extrabold">E</span>
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
         </div>
       </div>
       
-      <div className="fixed top-4 right-4 z-50">
+      <div className="absolute top-4 right-4 z-10">
         <ThemeToggle />
       </div>
 
-      <div className="max-w-4xl mx-auto pt-20">
+      <div className="max-w-4xl mx-auto pt-16 sm:pt-20 md:pt-24">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">
             테토-에겐 테스트 통계

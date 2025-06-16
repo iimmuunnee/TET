@@ -26,8 +26,8 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
   return (
     <div className="min-h-screen bg-sky-100 dark:bg-slate-900 flex flex-col relative">
       {/* 로고 */}
-      <div className="absolute top-2 sm:top-4 md:top-8 left-2 sm:left-4 md:left-8 z-50">
-        <div className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
+      <div className="absolute top-2 sm:top-4 md:top-8 left-2 sm:left-4 md:left-8 z-10">
+        <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
           <span className="text-teto font-extrabold">T</span>
           <span className="text-egen font-extrabold">E</span>
           <span className="text-slate-800 dark:text-slate-200 font-extrabold">T</span>
@@ -35,7 +35,7 @@ export default function GenderSelection({ onGenderSelect, onBackToName }: Gender
       </div>
 
       {/* 메인 컨텐츠 */}
-      <div className="flex-1 flex items-center justify-center px-2 sm:px-4 pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-16 sm:pb-20">
+      <div className="flex-1 flex items-center justify-center px-2 sm:px-4 pt-14 sm:pt-16 md:pt-20 lg:pt-24 pb-16 sm:pb-20">
         <div className="w-full max-w-xs sm:max-w-md md:max-w-lg">
         {/* Title */}
         <div className="text-center mb-6 sm:mb-8 md:mb-10">
