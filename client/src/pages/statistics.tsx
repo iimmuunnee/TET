@@ -34,7 +34,13 @@ export default function Statistics() {
     }
   });
 
-  if (isLoading) {
+  // Safe percentage calculation to prevent NaN
+  const safePercentage = (numerator: number, denominator: number): number => {
+    if (!denominator || denominator === 0 || !numerator) return 0;
+    return Math.round((numerator / denominator) * 100);
+  };
+
+  if (isLoading || !stats) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-sky-100 dark:bg-slate-900">
         <div className="text-center">
@@ -104,13 +110,13 @@ export default function Statistics() {
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium">남성</span>
                     <span className="text-sm font-bold text-blue-600">
-                      {stats.totalTests > 0 ? Math.round((stats.genderDistribution.male / stats.totalTests) * 100) : 0}%
+                      {safePercentage(stats.genderDistribution.male, stats.totalTests)}%
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium">여성</span>
                     <span className="text-sm font-bold text-pink-600">
-                      {stats.totalTests > 0 ? Math.round((stats.genderDistribution.female / stats.totalTests) * 100) : 0}%
+                      {safePercentage(stats.genderDistribution.female, stats.totalTests)}%
                     </span>
                   </div>
                 </div>
@@ -132,13 +138,13 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">🔥 테토 성향</span>
                       <span className="text-sm font-bold text-orange-600">
-                        {stats.totalTests > 0 ? Math.round((stats.typeDistribution.teto / stats.totalTests) * 100) : 0}%
+                        {safePercentage(stats.typeDistribution.teto, stats.totalTests)}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                       <div 
                         className="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${stats.totalTests > 0 ? (stats.typeDistribution.teto / stats.totalTests) * 100 : 0}%` }}
+                        style={{ width: `${safePercentage(stats.typeDistribution.teto, stats.totalTests)}%` }}
                       ></div>
                     </div>
                   </div>
@@ -148,13 +154,13 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">🌸 에겐 성향</span>
                       <span className="text-sm font-bold text-purple-600">
-                        {stats.totalTests > 0 ? Math.round((stats.typeDistribution.egen / stats.totalTests) * 100) : 0}%
+                        {safePercentage(stats.typeDistribution.egen, stats.totalTests)}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                       <div 
                         className="bg-gradient-to-r from-purple-400 to-pink-500 h-3 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${stats.totalTests > 0 ? (stats.typeDistribution.egen / stats.totalTests) * 100 : 0}%` }}
+                        style={{ width: `${safePercentage(stats.typeDistribution.egen, stats.totalTests)}%` }}
                       ></div>
                     </div>
                   </div>
