@@ -104,13 +104,13 @@ export default function Statistics() {
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium">남성</span>
                     <span className="text-sm font-bold text-blue-600">
-                      {Math.round((stats.genderDistribution.male / stats.totalTests) * 100)}%
+                      {stats.totalTests > 0 ? Math.round((stats.genderDistribution.male / stats.totalTests) * 100) : 0}%
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium">여성</span>
                     <span className="text-sm font-bold text-pink-600">
-                      {Math.round((stats.genderDistribution.female / stats.totalTests) * 100)}%
+                      {stats.totalTests > 0 ? Math.round((stats.genderDistribution.female / stats.totalTests) * 100) : 0}%
                     </span>
                   </div>
                 </div>
@@ -132,13 +132,13 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">🔥 테토 성향</span>
                       <span className="text-sm font-bold text-orange-600">
-                        {Math.round((stats.typeDistribution.teto / stats.totalTests) * 100)}%
+                        {stats.totalTests > 0 ? Math.round((stats.typeDistribution.teto / stats.totalTests) * 100) : 0}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                       <div 
                         className="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${(stats.typeDistribution.teto / stats.totalTests) * 100}%` }}
+                        style={{ width: `${stats.totalTests > 0 ? (stats.typeDistribution.teto / stats.totalTests) * 100 : 0}%` }}
                       ></div>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function Statistics() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium">🌸 에겐 성향</span>
                       <span className="text-sm font-bold text-purple-600">
-                        {Math.round((stats.typeDistribution.egen / stats.totalTests) * 100)}%
+                        {stats.totalTests > 0 ? Math.round((stats.typeDistribution.egen / stats.totalTests) * 100) : 0}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
