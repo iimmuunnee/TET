@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { AdBanner } from "@/components/ad-banner";
 
 export default function Home() {
   return (
@@ -78,6 +79,11 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
+
+          {/* 광고 배너 */}
+          <div className="flex justify-center mb-6">
+            <AdBanner position="top" />
+          </div>
 
           {/* Start Button */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

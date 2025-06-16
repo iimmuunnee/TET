@@ -6,6 +6,7 @@ import { Users, RotateCcw, Share2, Check, Heart } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { resultData } from "@/data/results";
 import { useToast } from "@/hooks/use-toast";
+import { AdBanner } from "@/components/ad-banner";
 import type { TestResult } from "@shared/schema";
 
 export default function Result() {
@@ -311,6 +312,11 @@ export default function Result() {
         </Card>
         </div>
 
+        {/* 상단 광고 */}
+        <div className="flex justify-center mb-6">
+          <AdBanner position="top" />
+        </div>
+
         {/* Action Buttons */}
         <div className="text-center space-y-3 md:space-y-4 px-4">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -355,6 +361,23 @@ export default function Result() {
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
             <span className="text-blue-500 font-semibold">링크</span>를 <span className="text-blue-500 font-semibold">복사</span>하거나 <span className="text-green-500 font-semibold">결과</span>를 <span className="text-green-500 font-semibold">저장</span>해서 공유해보세요!
           </p>
+        </div>
+
+        {/* 하단 광고 */}
+        <div className="flex justify-center mt-8 mb-4">
+          <AdBanner position="bottom" />
+        </div>
+        
+        {/* 통계 페이지 링크 */}
+        <div className="text-center mt-6">
+          <Link href="/statistics">
+            <Button 
+              variant="outline"
+              className="bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border-slate-300 dark:border-slate-600 hover:bg-white/70 dark:hover:bg-slate-700/70 text-slate-700 dark:text-slate-300 font-medium py-2 px-6 rounded-full transition-all duration-200"
+            >
+              📊 통계 보기
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
