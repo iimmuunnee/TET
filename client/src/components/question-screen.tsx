@@ -45,9 +45,13 @@ export default function QuestionScreen({
   const handleAnswerSelect = (answer: Answer, optionIndex: number) => {
     setClickedIndex(optionIndex);
 
-    // 즉시 답변 처리 (딜레이 제거)
+    // 짧은 딜레이 후 다음 문항으로 이동하면서 선택 상태 초기화
     setTimeout(() => {
       onAnswerSelect(answer);
+      // 다음 문항에서 자동으로 빈 공간 클릭 효과
+      setTimeout(() => {
+        setClickedIndex(null);
+      }, 100);
     }, 150);
   };
 
