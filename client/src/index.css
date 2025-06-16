@@ -5,6 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 텍스트 줄바꿈 강화 */
+.text-wrap-enhanced {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
+  line-height: 1.4;
+}
+
 /* 기본 반응형 설정 */
 html {
   -webkit-text-size-adjust: 100%;

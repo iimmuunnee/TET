@@ -97,7 +97,7 @@ export default function QuestionScreen({
                     key={`${currentQuestionIndex}-${index}`}
                     onClick={() => handleAnswerSelect(option, index)}
                     variant="outline"
-                    className={`w-full text-left p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border-2 h-auto min-h-[44px] sm:min-h-[48px] justify-start transition-all duration-200 touch-manipulation ${
+                    className={`w-full text-left p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border-2 h-auto min-h-[44px] sm:min-h-[48px] justify-start transition-all duration-200 touch-manipulation whitespace-normal ${
                       selectedIndex === index
                         ? 'border-purple-400 bg-purple-50 dark:border-purple-500 dark:bg-purple-950/20 shadow-md' 
                         : 'bg-white dark:bg-slate-800 border-slate-200 hover:border-sky-300 hover:bg-sky-50 dark:border-slate-600 dark:hover:border-sky-400 dark:hover:bg-sky-950/10 active:bg-sky-50 dark:active:bg-sky-950/10'
@@ -117,7 +117,7 @@ export default function QuestionScreen({
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed block break-words hyphens-auto word-break-keep-all">
+                        <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 text-wrap-enhanced">
                           {option.text}
                         </span>
                       </div>
