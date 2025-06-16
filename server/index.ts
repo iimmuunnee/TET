@@ -4,6 +4,7 @@ import slowDown from "express-slow-down";
 import helmet from "helmet";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { sanitizeInput, validateParams, limitRequestSize, detectSuspiciousActivity } from "./security";
 
 const app = express();
 
@@ -42,12 +43,15 @@ const speedLimiter = slowDown({
   validate: { delayMs: false } // 경고 메시지 비활성화
 });
 
-// Apply middleware
+// Apply security middleware
+app.use(detectSuspiciousActivity);
+app.use(sanitizeInput);
+app.use(limitRequestSize(50 * 1024)); // 50KB limit for requests
 app.use(limiter);
 app.use(speedLimiter);
 
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: false, limit: '10mb' }));
+app.use(express.json({ limit: '50kb' }));
+app.use(express.urlencoded({ extended: false, limit: '50kb' }));
 
 app.use((req, res, next) => {
   const start = Date.now();

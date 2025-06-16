@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import rateLimit from "express-rate-limit";
 import { storage } from "./storage";
 import { insertTestResultSchema } from "@shared/schema";
+import { validateParams } from "./security";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -40,7 +41,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertTestResultSchema.parse(req.body);
       
       // 추가 비즈니스 로직 검증
-      if (validatedData.answers && validatedData.answers.length > 20) {
+      if (validatedData.answers && Array.isArray(validatedData.answers) && validatedData.answers.length > 20) {
         return res.status(400).json({ error: "답변 수가 제한을 초과했습니다." });
       }
 
@@ -59,7 +60,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/test-results/:id", apiLimiter, async (req, res) => {
+  app.get("/api/test-results/:id", apiLimiter, validateParams, async (req, res) => {
     try {
       const id = parseInt(req.params.id);
       if (isNaN(id)) {
